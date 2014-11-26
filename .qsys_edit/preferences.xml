@@ -16,6 +16,6 @@
  </clocktable>
  <window width="1600" height="860" x="0" y="0" />
  <library
-   expandedCategories="Library/Verification,Project,Library/Verification/Debug &amp; Performance,Library/University Program/Generic IO,Library/University Program/Bridges,Library/University Program,Library" />
+   expandedCategories="Library/University Program/Generic IO,Library/University Program,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals,Library,Project" />
  <hdlexample language="VHDL" />
 </preferences>

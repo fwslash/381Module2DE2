@@ -58,10 +58,10 @@ module nios2_system_parallel_port_0 (
 	write,
 	writedata,
 
-	in_port,
 
 	// Bidirectionals
 
+	bidir_port,
 
 	// Outputs
 
@@ -89,9 +89,9 @@ input						read;
 input						write;
 input			[31: 0]	writedata;
 
-input			[DW: 0]	in_port;
 
 // Bidirectionals
+inout			[DW: 0]	bidir_port;
 
 // Outputs
 
@@ -108,8 +108,10 @@ output reg	[31: 0]	readdata;
 
 // Internal Registers
 reg			[31: 0]	data;
+reg			[31: 0]	direction;
 
 reg			[DW: 0]	data_in;
+reg			[DW: 0]	data_out;
 
 
 // State Machine Registers
@@ -130,7 +132,7 @@ genvar					i;
 // Input Registers
 always @(posedge clk)
 begin
-	data_in <= in_port;
+	data_in <= bidir_port;
 end
 
 // Output Registers
@@ -143,6 +145,8 @@ begin
 	begin
 		if (address == 2'h0)
 			readdata <= {{(31-DW){1'b0}}, data_in};
+		else if (address == 2'h1)
+			readdata <= {{(31-DW){1'b0}}, direction[DW:0]};
 		else
 			readdata <= 32'h00000000;
 	end
@@ -171,9 +175,32 @@ begin
 	end
 end
 
+always @(posedge clk)
+begin
+	if (reset == 1'b1)
+		direction <= {(DW + 1){1'b0}};
+	else if ((chipselect == 1'b1) &&
+			(write == 1'b1) &&
+			(address == 2'h1))
+	begin
+		if (byteenable[0])
+			direction[ 7: 0] <= writedata[ 7: 0];
+			
+		if (byteenable[1])
+			direction[15: 8] <= writedata[15: 8];
+
+		if (byteenable[2])
+			direction[23:16] <= writedata[23:16];
+			
+		if (byteenable[3])
+			direction[31:24] <= writedata[31:24];
+	end
+end
 
 
 
+always @(posedge clk)
+	data_out <= data[DW: 0];
 
 
 /*****************************************************************************
@@ -181,6 +208,12 @@ end
  *****************************************************************************/
 
 // Output Assignments
+generate
+	for (i=0; i <= DW; i = i + 1)
+	begin : assign_data_out
+		assign bidir_port[i] = direction[i] ? data_out[i] : 1'bZ;
+	end
+endgenerate
 
 
 // Internal Assignments

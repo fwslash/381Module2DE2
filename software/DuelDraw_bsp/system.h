@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_system' in SOPC Builder design 'nios2_system'
  * SOPC Builder design path: C:/Users/Harry/Dropbox/Module2/DuelDraw/nios2_system.sopcinfo
  *
- * Generated: Wed Nov 12 18:09:42 PST 2014
+ * Generated: Thu Nov 20 16:43:54 PST 2014
  */
 
 /*

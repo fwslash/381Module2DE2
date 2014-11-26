@@ -1,5 +1,5 @@
 Flow report for DuelDraw
-Wed Nov 12 17:26:41 2014
+Thu Nov 20 16:21:23 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov 12 17:26:34 2014           ;
+; Flow Status                        ; Successful - Thu Nov 20 16:21:16 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DuelDraw                                        ;
 ; Top-level Entity Name              ; DuelDraw                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 9,329 / 33,216 ( 28 % )                         ;
-;     Total combinational functions  ; 8,485 / 33,216 ( 26 % )                         ;
-;     Dedicated logic registers      ; 5,737 / 33,216 ( 17 % )                         ;
-; Total registers                    ; 5805                                            ;
+; Total logic elements               ; 9,613 / 33,216 ( 29 % )                         ;
+;     Total combinational functions  ; 8,756 / 33,216 ( 26 % )                         ;
+;     Dedicated logic registers      ; 5,905 / 33,216 ( 18 % )                         ;
+; Total registers                    ; 5973                                            ;
 ; Total pins                         ; 271 / 475 ( 57 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 200,192 / 483,840 ( 41 % )                      ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/12/2014 17:23:22 ;
+; Start date & time ; 11/20/2014 16:17:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DuelDraw            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
 ; Assignment Name                     ; Value                                                                ; Default Value ; Entity Name                     ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 172269390473084.141584180002480                                      ; --            ; --                              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 172269390473084.141652906101440                                      ; --            ; --                              ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_avalon_sc_fifo           ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_burst_adapter     ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_master_agent      ; --         ;
@@ -117,6 +117,7 @@ applicable agreement for further details.
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; nios2_system_sdcard_timer       ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; nios2_system_sdram              ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; nios2_system_switches           ; --         ;
+; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; nios2_system_timer_0            ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                                                          ; --            ; --                              ; --         ;
 ; IP_TOOL_NAME                        ; altera_avalon_sc_fifo                                                ; --            ; altera_avalon_sc_fifo           ; --         ;
 ; IP_TOOL_NAME                        ; altera_merlin_burst_adapter                                          ; --            ; altera_merlin_burst_adapter     ; --         ;
@@ -159,6 +160,7 @@ applicable agreement for further details.
 ; IP_TOOL_NAME                        ; altera_avalon_timer                                                  ; --            ; nios2_system_sdcard_timer       ; --         ;
 ; IP_TOOL_NAME                        ; altera_avalon_new_sdram_controller                                   ; --            ; nios2_system_sdram              ; --         ;
 ; IP_TOOL_NAME                        ; altera_avalon_pio                                                    ; --            ; nios2_system_switches           ; --         ;
+; IP_TOOL_NAME                        ; altera_avalon_timer                                                  ; --            ; nios2_system_timer_0            ; --         ;
 ; IP_TOOL_VERSION                     ; 8.0                                                                  ; --            ; --                              ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                                                 ; --            ; altera_avalon_sc_fifo           ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                                                                 ; --            ; altera_merlin_burst_adapter     ; --         ;
@@ -201,6 +203,7 @@ applicable agreement for further details.
 ; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                          ; --            ; nios2_system_sdcard_timer       ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                          ; --            ; nios2_system_sdram              ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                          ; --            ; nios2_system_switches           ; --         ;
+; IP_TOOL_VERSION                     ; 13.0.1.99.2                                                          ; --            ; nios2_system_timer_0            ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                   ; --            ; --                              ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                    ; --            ; --                              ; --         ;
 ; MISC_FILE                           ; nios2_system/synthesis/../../nios2_system.cmp                        ; --            ; --                              ; --         ;
@@ -211,7 +214,7 @@ applicable agreement for further details.
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                ; --            ; --                              ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                                               ; --            ; --                              ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                         ; --            ; --                              ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1415841742       ; --            ; nios2_system                    ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1416528985       ; --            ; nios2_system                    ; --         ;
 ; SOPCINFO_FILE                       ; nios2_system/synthesis/../../nios2_system.sopcinfo                   ; --            ; --                              ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                   ; --            ; --                              ; --         ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
@@ -222,11 +225,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:44     ; 1.0                     ; 773 MB              ; 00:01:25                           ;
-; Fitter                    ; 00:01:07     ; 1.0                     ; 815 MB              ; 00:01:05                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 472 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 544 MB              ; 00:00:04                           ;
-; Total                     ; 00:03:01     ; --                      ; --                  ; 00:02:38                           ;
+; Analysis & Synthesis      ; 00:01:51     ; 1.0                     ; 786 MB              ; 00:01:29                           ;
+; Fitter                    ; 00:01:21     ; 1.0                     ; 819 MB              ; 00:01:01                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 480 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 546 MB              ; 00:00:04                           ;
+; Total                     ; 00:03:20     ; --                      ; --                  ; 00:02:37                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
