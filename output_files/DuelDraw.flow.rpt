@@ -1,5 +1,5 @@
 Flow report for DuelDraw
-Thu Nov 20 16:21:23 2014
+Tue Nov 25 17:25:39 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov 20 16:21:16 2014           ;
+; Flow Status                        ; Successful - Tue Nov 25 17:25:33 2014           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DuelDraw                                        ;
 ; Top-level Entity Name              ; DuelDraw                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 9,613 / 33,216 ( 29 % )                         ;
-;     Total combinational functions  ; 8,756 / 33,216 ( 26 % )                         ;
-;     Dedicated logic registers      ; 5,905 / 33,216 ( 18 % )                         ;
-; Total registers                    ; 5973                                            ;
+; Total logic elements               ; 9,874 / 33,216 ( 30 % )                         ;
+;     Total combinational functions  ; 8,917 / 33,216 ( 27 % )                         ;
+;     Dedicated logic registers      ; 6,091 / 33,216 ( 18 % )                         ;
+; Total registers                    ; 6159                                            ;
 ; Total pins                         ; 271 / 475 ( 57 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 200,192 / 483,840 ( 41 % )                      ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/20/2014 16:17:43 ;
+; Start date & time ; 11/25/2014 17:23:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DuelDraw            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
 ; Assignment Name                     ; Value                                                                ; Default Value ; Entity Name                     ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 172269390473084.141652906101440                                      ; --            ; --                              ; --         ;
+; COMPILER_SIGNATURE_ID               ; 172269390473084.141696499013680                                      ; --            ; --                              ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_avalon_sc_fifo           ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_burst_adapter     ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                                 ; --            ; altera_merlin_master_agent      ; --         ;
@@ -214,7 +214,7 @@ applicable agreement for further details.
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                ; --            ; --                              ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                                               ; --            ; --                              ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                         ; --            ; --                              ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1416528985       ; --            ; nios2_system                    ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1416962585       ; --            ; nios2_system                    ; --         ;
 ; SOPCINFO_FILE                       ; nios2_system/synthesis/../../nios2_system.sopcinfo                   ; --            ; --                              ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                   ; --            ; --                              ; --         ;
 +-------------------------------------+----------------------------------------------------------------------+---------------+---------------------------------+------------+
@@ -225,11 +225,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:51     ; 1.0                     ; 786 MB              ; 00:01:29                           ;
-; Fitter                    ; 00:01:21     ; 1.0                     ; 819 MB              ; 00:01:01                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 480 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 546 MB              ; 00:00:04                           ;
-; Total                     ; 00:03:20     ; --                      ; --                  ; 00:02:37                           ;
+; Analysis & Synthesis      ; 00:01:08     ; 1.0                     ; 772 MB              ; 00:01:08                           ;
+; Fitter                    ; 00:00:58     ; 1.0                     ; 816 MB              ; 00:00:59                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 487 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 547 MB              ; 00:00:04                           ;
+; Total                     ; 00:02:13     ; --                      ; --                  ; 00:02:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

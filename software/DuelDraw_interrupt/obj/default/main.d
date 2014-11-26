@@ -18,7 +18,9 @@ obj/default/main.o: main.c usb/usb.h usb/usb_queue.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/nios2.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_irq.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/io.h \
-  ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h
+  ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h \
+  ../DuelDraw_interrupt_bsp//drivers/inc/altera_avalon_timer_regs.h \
+  ../DuelDraw_interrupt_bsp//HAL/inc/io.h
 
 usb/usb.h:
 
@@ -71,3 +73,7 @@ player.h:
 ../DuelDraw_interrupt_bsp//HAL/inc/io.h:
 
 ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h:
+
+../DuelDraw_interrupt_bsp//drivers/inc/altera_avalon_timer_regs.h:
+
+../DuelDraw_interrupt_bsp//HAL/inc/io.h:

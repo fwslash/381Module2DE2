@@ -9,24 +9,22 @@
 #include "unistd.h"
 #include "sys/alt_irq.h"
 #include "io.h"
-
+#include "altera_avalon_timer_regs.h"
 #include <assert.h>
 
 volatile int count = 0;
+volatile int value = 0;
+
 // runs every 25ms
 void timer_isr(void * context, unsigned int irq_id) {
-	// receive from middleman
-//	if (!usb_recv_queue_is_empty()) {
-//
-//	}
-
 	count++;
 	if (count == 40){
-		printf("check.\n");
+		value++;
+		IOWR_16DIRECT(LEDR_BASE, 0, value++);
 		count = 0;
 	}
-
-	IOWR_32DIRECT(TIMER_0_BASE, 0, 0);
+	IOWR_8DIRECT(LEDG_BASE, 0, count);
+	IOWR_16DIRECT(TIMER_0_BASE, 0, 0);
 }
 
 int main() {
@@ -56,9 +54,9 @@ int main() {
 	printf("Done polling USB\n");
 
 	printf("Initialize IRQ\n");
-	alt_irq_register(TIMER_0_IRQ, NULL, timer_isr);
 	alt_irq_disable(TIMER_0_IRQ);
-	IOWR_16DIRECT(TIMER_0_BASE, 1, 0x07);
+	alt_irq_register(TIMER_0_IRQ, NULL, timer_isr);
+	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x07);
 	alt_irq_enable(TIMER_0_IRQ);
 
 	printf("Initializing loop\n");

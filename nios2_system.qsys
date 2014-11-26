@@ -228,11 +228,32 @@
          type = "int";
       }
    }
-   element sdram.s1
+   element onchip.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element LEDR.s1
    {
       datum baseAddress
       {
-         value = "16777216";
+         value = "18720";
+         type = "String";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "18464";
          type = "String";
       }
    }
@@ -241,6 +262,14 @@
       datum baseAddress
       {
          value = "18736";
+         type = "String";
+      }
+   }
+   element key.s1
+   {
+      datum baseAddress
+      {
+         value = "18688";
          type = "String";
       }
    }
@@ -260,40 +289,11 @@
          type = "String";
       }
    }
-   element key.s1
+   element sdram.s1
    {
       datum baseAddress
       {
-         value = "18688";
-         type = "String";
-      }
-   }
-   element LEDR.s1
-   {
-      datum baseAddress
-      {
-         value = "18720";
-         type = "String";
-      }
-   }
-   element onchip.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element timer_0.s1
-   {
-      datum baseAddress
-      {
-         value = "18464";
+         value = "16777216";
          type = "String";
       }
    }
@@ -416,7 +416,7 @@
  <parameter name="projectName" value="DuelDraw.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1416530736886" />
+ <parameter name="timeStamp" value="1416960755880" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />

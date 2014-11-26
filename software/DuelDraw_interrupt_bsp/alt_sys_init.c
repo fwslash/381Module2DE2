@@ -48,6 +48,10 @@
  * of California and by the laws of the United States of America.
  */
 
+#ifndef NULL
+#define NULL (void*) 0
+#endif
+
 #include "system.h"
 #include "sys/alt_irq.h"
 #include "sys/alt_sys_init.h"
