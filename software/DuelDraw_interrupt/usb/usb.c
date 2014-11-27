@@ -14,10 +14,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifndef NULL
-#define NULL (void*)0
-#endif
-
 //  Global Variable
 D13FLAGS bD13flags;
 USBCHECK_DEVICE_STATES bUSBCheck_Device_State;

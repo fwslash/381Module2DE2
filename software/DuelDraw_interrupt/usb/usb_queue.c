@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <assert.h>
 
-
+#ifndef NULL
+#define NULL (void*)0
+#endif
 
 void usb_fifo_init(usb_fifo * fifo) {
 	fifo->head = NULL;
@@ -18,7 +20,7 @@ void usb_fifo_push(usb_fifo * fifo, unsigned char * data, unsigned int len) {
 	new_packet->data = data;
 
 	new_packet->next = NULL;
-	if (! fifo->head)
+	if (!fifo->head)
 		fifo->head = new_packet;
 	if (fifo->tail)
 		fifo->tail->next = new_packet;
@@ -26,13 +28,14 @@ void usb_fifo_push(usb_fifo * fifo, unsigned char * data, unsigned int len) {
 }
 
 int usb_fifo_is_empty(usb_fifo * fifo) {
-	if (fifo->head == NULL)
+	if (fifo->head == NULL) {
 		return 1;
-	else
+	} else
 		return 0;
 }
 
-void usb_fifo_pop(usb_fifo * fifo, unsigned char ** data, unsigned int * len, unsigned int * offset) {
+void usb_fifo_pop(usb_fifo * fifo, unsigned char ** data, unsigned int * len,
+		unsigned int * offset) {
 	if (usb_fifo_is_empty(fifo)) {
 		*data = NULL;
 		*len = 0;
@@ -42,7 +45,7 @@ void usb_fifo_pop(usb_fifo * fifo, unsigned char ** data, unsigned int * len, un
 
 	usb_packet * packet_removed = fifo->head;
 	fifo->head = fifo->head->next;
-	if (! fifo->head)
+	if (!fifo->head)
 		fifo->tail = NULL;
 
 	*data = packet_removed->data;

@@ -154,6 +154,7 @@ C_SRCS += usb/usb_device_bus.c
 C_SRCS += usb/usb_device_hal.c
 C_SRCS += usb/usb_isr.c
 C_SRCS += usb/usb_queue.c
+C_SRCS += recvQueue.c
 CXX_SRCS :=
 ASM_SRCS :=
 

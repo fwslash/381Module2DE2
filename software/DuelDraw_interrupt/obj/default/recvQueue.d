@@ -1,4 +1,4 @@
-obj/default/packet.o: packet.c packet.h config.h usb/usb.h \
+obj/default/recvQueue.o: recvQueue.c recvQueue.h config.h usb/usb.h \
   usb/usb_queue.h \
   ../DuelDraw_interrupt_bsp//drivers/inc/altera_up_avalon_usb.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h \
@@ -11,19 +11,19 @@ obj/default/packet.o: packet.c packet.h config.h usb/usb.h \
   ../DuelDraw_interrupt_bsp/system.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_timestamp.h \
   ../DuelDraw_interrupt_bsp//drivers/inc/altera_avalon_timer.h \
-  ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_warning.h usbio.h player.h \
-  ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_irq.h \
+  ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_warning.h packet.h usbio.h \
+  player.h ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_irq.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/nios2.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/priv/alt_legacy_irq.h \
   ../DuelDraw_interrupt_bsp/system.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/nios2.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_irq.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/io.h \
-  ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h recvQueue.h \
+  ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h \
   ../DuelDraw_interrupt_bsp//drivers/inc/altera_avalon_timer_regs.h \
   ../DuelDraw_interrupt_bsp//HAL/inc/io.h
 
-packet.h:
+recvQueue.h:
 
 config.h:
 
@@ -57,6 +57,8 @@ usb/usb_queue.h:
 
 ../DuelDraw_interrupt_bsp//HAL/inc/sys/alt_warning.h:
 
+packet.h:
+
 usbio.h:
 
 player.h:
@@ -76,8 +78,6 @@ player.h:
 ../DuelDraw_interrupt_bsp//HAL/inc/io.h:
 
 ../DuelDraw_interrupt_bsp//HAL/inc/alt_types.h:
-
-recvQueue.h:
 
 ../DuelDraw_interrupt_bsp//drivers/inc/altera_avalon_timer_regs.h:
 

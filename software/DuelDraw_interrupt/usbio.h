@@ -10,6 +10,11 @@
 #ifndef USBIO_H_
 #define USBIO_H_
 
+
+#ifndef NULL
+#define NULL (void*)0
+#endif
+
 #include "usb/usb.h"
 #include "assert.h"
 #include "string.h"
@@ -34,6 +39,5 @@ int usb_send(packet* p);
  */
 packet* usb_recv();
 
-packet* make_packet(char client_id, char* data);
 
 #endif /* USBIO_H_ */
