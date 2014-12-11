@@ -1,14 +1,15 @@
 #include "config.h"
-
+//
 volatile int count = 0;
 volatile int value = 0;
-
+//
 volatile recvQueue* rq;
-
+//
 // runs every 25ms
 void timer_isr(void * context, unsigned int irq_id) {
 	count = (count + 1) % 2;
 
+	// receive packet if not empty
 	if (!(usb_recv_queue_is_empty())) {
 		printf("Received packet\n");
 		packet* p = usb_recv();
@@ -17,9 +18,21 @@ void timer_isr(void * context, unsigned int irq_id) {
 		printf("\nQueue size: %d\n", getQueueSize(rq));
 	}
 
+	// toggle led for isr run check
 	IOWR_8DIRECT(LEDG_BASE, 0, count);
 
+	// Reset Timer for next iteration
 	IOWR_16DIRECT(TIMER_0_BASE, 0, 0);
+}
+
+void sendPlayerData() {
+	packet* p = init_packet();
+	p = make_packet(255, "C2");
+	usb_send(p);
+	p = make_packet(255, "DUser1");
+	usb_send(p);
+	p = make_packet(255, "DUser2");
+	usb_send(p);
 }
 
 int main() {
@@ -43,18 +56,32 @@ int main() {
 //	IOWR_16DIRECT(TIMER_0_BASE, 4, 0x07);
 //	alt_irq_enable(TIMER_0_IRQ);
 
-	printf("Initializing Queue\n");
-	rq = initRecvQueue();
+//	printf("Initializing Queue\n");
+//	rq = initRecvQueue();
+
+
 
 	printf("Initializing loop\n");
 
+	packet* p = init_packet();
+
 	while (1) {
-		// send to middle man
-		printf("Check for packet\n");
-		packet* p = usb_recv();
-		printf("post usb_recv\n");
-		rq = addToQueue(rq, p);
-		printf("\nQueue size: %d\n", getQueueSize(rq));
+		char* deviceID = malloc(4* sizeof(char));
+		char* data = malloc(64 * sizeof(char));
+		printf("Enter deviceID:");
+		scanf("%s", deviceID);
+		if (strcmp(deviceID,"sen")== 0){
+			sendPlayerData();
+			continue;
+		}
+		printf("Enter data:");
+		scanf("%s", data);
+		p = make_packet(atoi(deviceID), data);
+
+		usb_send(p);
+
+		printf("Sent %d bytes to client %d: %s\n", p->byte_count, p->client_id,
+				p->data);
 	}
 
 	return 0;
